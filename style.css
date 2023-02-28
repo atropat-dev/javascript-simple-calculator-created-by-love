@@ -1,0 +1,90 @@
+:root {
+  --primary: #3f2c53;
+  --secondary: rgb(235, 224, 238);
+  --third: rgb(244, 240, 247);
+  --shadow: 5px 15px 20px #4f455552;
+  --width: 60%;
+  --height: calc(100vh / 1.5);
+  --padding: 3rem;
+  --radius: 5px;
+}
+
+body {
+  background-color: var(--secondary);
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calculator {
+  background-color: var(--third);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: var(--width);
+  height: var(--height);
+  max-width: 20rem;
+  padding: var(--padding);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.display {
+  padding-bottom: calc(var(--height) / 10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#result {
+  color: var(--secondary);
+  font-size: 3rem;
+  padding: 0 1rem;
+  border: none;
+  background-color: var(--primary);
+  max-width: calc(var(--width) / 0.7);
+  height: calc(var(--height) / 5);
+  border-radius: var(--radius);
+}
+
+.buttons {
+  display: grid;
+  height: calc(var(--height) / 1.4);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+button {
+  color: var(--primary);
+  font-size: calc(var(--width) / 0.5);
+  font-weight: 500;
+  border: none;
+  margin: calc(var(--width) / 20);
+  background: radial-gradient(circle at center, var(--secondary), var(--secondary), var(--secondary) 0%);
+
+  cursor: pointer;
+  filter: brightness(1);
+  transition: filter 200ms ease-in, background 200ms ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transition: background 0ms;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
